@@ -33,10 +33,6 @@ Route::group([
         ->name('projects.show');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth:admin')->name('dashboard');
-
 Route::get('messages', [MessagesController::class, 'create'])
     ->name('messages');
 Route::post('messages', [MessagesController::class, 'store']);

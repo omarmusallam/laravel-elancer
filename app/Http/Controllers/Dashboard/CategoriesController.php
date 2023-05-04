@@ -18,7 +18,7 @@ class CategoriesController extends Controller
 
     protected $rules = [
         // 'name' => 'required|string|max:20|min:4',
-        'name' => ['required', 'string', 'between:2,20'],
+        'name' => ['required', 'string', 'between:2,30'],
         'parent_id' => ['nullable', 'int', 'exists:categories,id'],
         'desc' => ['nullable', 'string'],
         'art_file' => ['nullable', 'image']
@@ -30,7 +30,11 @@ class CategoriesController extends Controller
 
     public function index()
     {
-        // $ind = DB::table('categories')->get();
+        // if (Gate::denies('categories.view')) {
+        //     abort(403);
+        // }
+        //$this->authorize('view-any', Category::class);
+
         $categories1 = Category::leftJoin('categories as parents', 'parents.id', '=', 'categories.parent_id')
             ->select([
                 'categories.*',
@@ -40,7 +44,6 @@ class CategoriesController extends Controller
 
         $title = 'Categories';
         return view('categories.index', compact('categories1', 'title'));
-        //->with('success' , session('success')
     }
 
     public function show(Category $category)
@@ -51,7 +54,7 @@ class CategoriesController extends Controller
                 'parents.name as parent_name'
             ])
             ->get();
-        // $category = Category::where('id' , '=' , $id)->first();
+
         return view('categories.show', compact('category', 'categories1'));
     }
 
@@ -82,7 +85,6 @@ class CategoriesController extends Controller
         }
         $category = Category::create($data);
 
-        // Post Redirect Get
         return redirect(route('categories.index'))
             ->with('success', 'Category Created');
     }

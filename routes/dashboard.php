@@ -1,22 +1,28 @@
 <?php
 
 use App\Http\Controllers\Dashboard\CategoriesController;
+use App\Http\Controllers\Dashboard\RolesController;
 use Illuminate\Support\Facades\Route;
+
+
 
 Route::group([
     'prefix' => '/dashboard',
-    'namespace' => 'Dashboard',
     'middleware' => ['auth:admin'],
-], function() {
+], function () {
 
-    // Route::resource('roles', 'RolesController');
+    Route::resource('roles', RolesController::class);
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
     // Route::get('config', [ConfigController::class, 'index'])->name('config');
     // Route::post('config', [ConfigController::class, 'store']);
 
     Route::prefix('/categories')
         ->as('categories.')
-        ->group(function() {
+        ->group(function () {
             Route::get('/', [CategoriesController::class, 'index'])
                 ->name('index');
             Route::get('/trash', [CategoriesController::class, 'trash'])

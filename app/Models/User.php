@@ -68,10 +68,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Contract::class, 'freelancer_id', 'id');
     }
 
-    // public function roles()
-    // {
-    //     return $this->belongsToMany(Role::class, 'role_user');
-    // }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class, 'role_user');
+    }
 
     public function proposedProjects()
     {
@@ -151,14 +151,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return 'App.Models.User.' . $this->id;
     }
 
-/**
- * Create a new personal access token for the user.
- *
- * @param  string  $name
- * @param  array  $abilities
- * @return \Laravel\Sanctum\NewAccessToken
- */
-// public function createToken(string $name, array $abilities = ['*'], $fcm_token = null)
+    /**
+     * Create a new personal access token for the user.
+     *
+     * @param  string  $name
+     * @param  array  $abilities
+     * @return \Laravel\Sanctum\NewAccessToken
+     */
+    // public function createToken(string $name, array $abilities = ['*'], $fcm_token = null)
 // {
 //     $token = $this->tokens()->create([
 //         'name' => $name,
@@ -167,16 +167,16 @@ class User extends Authenticatable implements MustVerifyEmail
 //         'fcm_token' => $fcm_token,
 //     ]);
 
-//     return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
+    //     return new NewAccessToken($token, $token->getKey() . '|' . $plainTextToken);
 // }
 
-// public function hasAbility($ability)
-// {
-//     foreach ($this->roles as $role) {
-//         if (in_array($ability, $role->abilities)) {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+    public function hasAbility($ability)
+    {
+        foreach ($this->roles as $role) {
+            if (in_array($ability, $role->abilities)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

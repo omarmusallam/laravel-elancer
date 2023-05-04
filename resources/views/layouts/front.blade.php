@@ -39,8 +39,8 @@
 
                         <!-- Logo -->
                         <div id="logo">
-                            <a href="index.html"><img src="{{ asset('assets/front/images/logo.png') }}"
-                                    alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/front/images/logo.png') }}"
+                                    alt="logo"></a>
                         </div>
 
                         <!-- Main Navigation -->
@@ -56,89 +56,48 @@
 
                                 <li><a href="#">{{ trans('Find Work') }}</a>
                                     <ul class="dropdown-nav">
-                                        <li><a href="#">@lang('Browse Jobs')</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="jobs-list-layout-full-page-map.html">Full Page List +
-                                                        Map</a></li>
-                                                <li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid +
-                                                        Map</a></li>
-                                                <li><a href="jobs-grid-layout-full-page.html">Full Page Grid</a></li>
-                                                <li><a href="jobs-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="jobs-list-layout-2.html">List Layout 2</a></li>
-                                                <li><a href="jobs-grid-layout.html">Grid Layout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">{{ Lang::get('Browse Tasks') }}</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="tasks-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="tasks-list-layout-2.html">List Layout 2</a></li>
-                                                <li><a href="tasks-grid-layout.html">Grid Layout</a></li>
-                                                <li><a href="tasks-grid-layout-full-page.html">Full Page Grid</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="browse-companies.html">Browse Companies</a></li>
-                                        <li><a href="single-job-page.html">Job Page</a></li>
-                                        <li><a href="single-task-page.html">Task Page</a></li>
-                                        <li><a href="single-company-profile.html">Company Profile</a></li>
+                                        <li><a href="#">@lang('Browse Jobs')</a></li>
+                                        <li><a href="#">{{ Lang::get('Browse Tasks') }}</a></li>
+                                        <li><a href="#">Browse Companies</a></li>
+                                        <li><a href="#">Job Page</a></li>
+                                        <li><a href="#">Task Page</a></li>
+                                        <li><a href="#">Company Profile</a></li>
                                     </ul>
                                 </li>
 
                                 <li><a href="#">{{ __('For Employers') }}</a>
                                     <ul class="dropdown-nav">
-                                        <li><a href="#">{{ __('Find a Freelancer') }}</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="freelancers-grid-layout-full-page.html">Full Page Grid</a>
-                                                </li>
-                                                <li><a href="freelancers-grid-layout.html">Grid Layout</a></li>
-                                                <li><a href="freelancers-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="freelancers-list-layout-2.html">List Layout 2</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="#">{{ __('Find a Freelancer') }}</a></li>
                                         <li><a href="{{ route('freelancer.profile.edit') }}">Freelancer Profile</a>
                                         </li>
                                         <li><a href="{{ route('client.projects.create') }}">Post a Job</a></li>
-                                        <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+                                        <li><a href="#">Post a Task</a></li>
                                     </ul>
                                 </li>
 
                                 <li><a href="#">{{ __('Dashboard') }}</a>
                                     <ul class="dropdown-nav">
-                                        <li><a href="dashboard.html">Dashboard</a></li>
-                                        <li><a href="dashboard-messages.html">Messages</a></li>
-                                        <li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-                                        <li><a href="dashboard-reviews.html">Reviews</a></li>
-                                        <li><a href="dashboard-manage-jobs.html">Jobs</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="dashboard-manage-jobs.html">Manage Jobs</a></li>
-                                                <li><a href="dashboard-manage-candidates.html">Manage Candidates</a>
-                                                </li>
-                                                <li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="dashboard-manage-tasks.html">{{ __('Tasks') }}</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="dashboard-manage-tasks.html">Manage Tasks</a></li>
-                                                <li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
-                                                <li><a href="dashboard-my-active-bids.html">My Active Bids</a></li>
-                                                <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="dashboard-settings.html">Settings</a></li>
+                                        <li><a href="#">Dashboard</a></li>
+                                        <li><a href="#">Messages</a></li>
+                                        <li><a href="#">Bookmarks</a></li>
+                                        <li><a href="#">Reviews</a></li>
+                                        <li><a href="#">Jobs</a></li>
+                                        <li><a href="#">{{ __('Tasks') }}</a></li>
+                                        <li><a href="#">Settings</a></li>
                                     </ul>
                                 </li>
 
                                 <li><a href="#" class="current">{{ __('Pages') }}</a>
                                     <ul class="dropdown-nav">
-                                        <li><a href="pages-blog.html">Blog</a></li>
-                                        <li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
-                                        <li><a href="pages-checkout-page.html">Checkout Page</a></li>
-                                        <li><a href="pages-invoice-template.html">Invoice Template</a></li>
-                                        <li><a href="pages-user-interface-elements.html">User Interface Elements</a>
-                                        </li>
-                                        <li><a href="pages-icons-cheatsheet.html">Icons Cheatsheet</a></li>
-                                        <li><a href="pages-login.html">Login & Register</a></li>
-                                        <li><a href="pages-404.html">404 Page</a></li>
-                                        <li><a href="pages-contact.html">Contact</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Pricing Plans</a></li>
+                                        <li><a href="#">Checkout Page</a></li>
+                                        <li><a href="#">Invoice Template</a></li>
+                                        <li><a href="#">User Interface Elements</a></li>
+                                        <li><a href="#">Icons Cheatsheet</a></li>
+                                        <li><a href="#">Login & Register</a></li>
+                                        <li><a href="#">404 Page</a></li>
+                                        <li><a href="#">Contact</a></li>
                                     </ul>
                                 </li>
 
@@ -232,10 +191,9 @@
                                         </div>
 
                                         <ul class="user-menu-small-nav">
-                                            <li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i>
+                                            <li><a href="#"><i class="icon-material-outline-dashboard"></i>
                                                     {{ __('Dashboard') }}</a></li>
-                                            <li><a href="dashboard-settings.html"><i
-                                                        class="icon-material-outline-settings"></i>
+                                            <li><a href="#"><i class="icon-material-outline-settings"></i>
                                                     {{ __('Settings') }}</a></li>
                                             <li><a href="{{ route('logout') }}"
                                                     onclick="event.preventDefault(); document.getElementById('logout').submit();"><i
@@ -332,19 +290,6 @@
                                                 </li>
                                             </ul>
                                             <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Language Switcher -->
-                                    <div class="footer-row">
-                                        <div class="footer-row-inner">
-                                            <select class="selectpicker language-switcher"
-                                                data-selected-text-format="count" data-size="5">
-                                                <option selected>English</option>
-                                                <option>Français</option>
-                                                <option>Español</option>
-                                                <option>Deutsch</option>
-                                            </select>
                                         </div>
                                     </div>
                                 </div>
