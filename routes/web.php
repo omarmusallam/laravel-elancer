@@ -3,6 +3,8 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\OtpController;
+use App\Http\Controllers\PaymentsCallbackController;
+use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -46,6 +48,6 @@ require __DIR__ . '/dashboard.php';
 require __DIR__ . '/freelancer.php';
 require __DIR__ . '/client.php';
 
-// Route::get('payments/create', [PaymentsController::class, 'create'])->name('payments.create');
-// Route::get('/payments/callback/success', [PaymentsCallbackController::class, 'success'])->name('payments.success');
-// Route::get('/payments/callback/cancel', [PaymentsCallbackController::class, 'cancel'])->name('payments.cancel');
+Route::get('payments/create', [PaymentsController::class, 'create'])->name('payments.create');
+Route::get('/payments/callback/success', [PaymentsCallbackController::class, 'success'])->name('payments.success');
+Route::get('/payments/callback/cancel', [PaymentsCallbackController::class, 'cancel'])->name('payments.cancel');
