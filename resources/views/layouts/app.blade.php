@@ -23,224 +23,8 @@
 
         <!-- Header Container
 ================================================== -->
-        <header id="header-container" class="fullwidth dashboard-header not-sticky">
+        <x-front-header />
 
-            <!-- Header -->
-            <div id="header">
-                <div class="container">
-
-                    <!-- Left Side Content -->
-                    <div class="left-side">
-
-                        <!-- Logo -->
-                        <div id="logo">
-                            <a href="#"><img src="images/logo.png" alt=""></a>
-                        </div>
-
-                        <!-- Main Navigation -->
-                        <nav id="navigation">
-                            <ul id="responsive">
-
-                                <li><a href="#">Home</a>
-                                    <ul class="dropdown-nav">
-                                        <li><a href="index.html">Home 1</a></li>
-                                        <li><a href="index-2.html">Home 2</a></li>
-                                        <li><a href="index-3.html">Home 3</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="#">Find Work</a>
-                                    <ul class="dropdown-nav">
-                                        <li><a href="#">Browse Jobs</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="jobs-list-layout-full-page-map.html">Full Page List +
-                                                        Map</a></li>
-                                                <li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid +
-                                                        Map</a></li>
-                                                <li><a href="jobs-grid-layout-full-page.html">Full Page Grid</a></li>
-                                                <li><a href="jobs-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="jobs-list-layout-2.html">List Layout 2</a></li>
-                                                <li><a href="jobs-grid-layout.html">Grid Layout</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Browse Tasks</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="tasks-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="tasks-list-layout-2.html">List Layout 2</a></li>
-                                                <li><a href="tasks-grid-layout.html">Grid Layout</a></li>
-                                                <li><a href="tasks-grid-layout-full-page.html">Full Page Grid</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="browse-companies.html">Browse Companies</a></li>
-                                        <li><a href="single-job-page.html">Job Page</a></li>
-                                        <li><a href="single-task-page.html">Task Page</a></li>
-                                        <li><a href="single-company-profile.html">Company Profile</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="#">For Employers</a>
-                                    <ul class="dropdown-nav">
-                                        <li><a href="#">Find a Freelancer</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="freelancers-grid-layout-full-page.html">Full Page Grid</a>
-                                                </li>
-                                                <li><a href="freelancers-grid-layout.html">Grid Layout</a></li>
-                                                <li><a href="freelancers-list-layout-1.html">List Layout 1</a></li>
-                                                <li><a href="freelancers-list-layout-2.html">List Layout 2</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="{{ route('freelancer.profile.edit') }}">Freelancer Profile</a></li>
-                                        <li><a href="{{ route('client.projects.create') }}">Post a Job</a></li>
-                                        <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="#" class="current">Dashboard</a>
-                                    <ul class="dropdown-nav">
-                                        <li><a href="dashboard.html">Dashboard</a></li>
-                                        <li><a href="dashboard-messages.html">Messages</a></li>
-                                        <li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-                                        <li><a href="dashboard-reviews.html">Reviews</a></li>
-                                        <li><a href="dashboard-manage-jobs.html">Jobs</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="dashboard-manage-jobs.html">Manage Jobs</a></li>
-                                                <li><a href="dashboard-manage-candidates.html">Manage Candidates</a>
-                                                </li>
-                                                <li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="dashboard-manage-tasks.html">Tasks</a>
-                                            <ul class="dropdown-nav">
-                                                <li><a href="dashboard-manage-tasks.html">Manage Tasks</a></li>
-                                                <li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
-                                                <li><a href="dashboard-my-active-bids.html">My Active Bids</a></li>
-                                                <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="dashboard-settings.html">Settings</a></li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown-nav">
-                                        <li><a href="pages-blog.html">Blog</a></li>
-                                        <li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
-                                        <li><a href="pages-checkout-page.html">Checkout Page</a></li>
-                                        <li><a href="pages-invoice-template.html">Invoice Template</a></li>
-                                        <li><a href="pages-user-interface-elements.html">User Interface Elements</a>
-                                        </li>
-                                        <li><a href="pages-icons-cheatsheet.html">Icons Cheatsheet</a></li>
-                                        <li><a href="pages-login.html">Login & Register</a></li>
-                                        <li><a href="pages-404.html">404 Page</a></li>
-                                        <li><a href="pages-contact.html">Contact</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
-                        </nav>
-                        <div class="clearfix"></div>
-                        <!-- Main Navigation / End -->
-
-                    </div>
-                    <!-- Left Side Content / End -->
-
-
-                    <!-- Right Side Content / End -->
-                    <div class="right-side">
-
-                        <x-notification-menu count="5" />
-
-                        <!-- User Menu -->
-                        <div class="header-widget">
-
-                            <!-- Messages -->
-                            <div class="header-notifications user-menu">
-                                <div class="header-notifications-trigger">
-                                    <a href="#">
-                                        <div class=""><img src="{{ Auth::user()->profile_photo_url }}"
-                                                alt=""
-                                                style="border: 2px solid #2a41e8;
-                                                padding: 2px;
-                                                border-radius: 50%;
-                                                border-top-color: #47bb67;
-                                                border-left-color: #47bb67;
-                                                width: 60px;
-                                                height: 60px;">
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <!-- Dropdown -->
-                                <div class="header-notifications-dropdown">
-
-                                    <!-- User Status -->
-                                    <div class="user-status">
-
-                                        <!-- User Name / Avatar -->
-                                        <div class="user-details">
-                                            <div class=""><a href="{{ route('freelancer.profile.edit') }}"><img
-                                                        src="{{ Auth::user()->profile_photo_url }}" alt=""
-                                                        style="border: 2px solid #2a41e8;
-                                                padding: 2px;
-                                                border-radius: 50%;
-                                                border-top-color: #47bb67;
-                                                border-left-color: #47bb67;
-                                                width: 60px;
-                                                height: 60px;"></a>
-                                            </div>
-                                            <div class="user-name">
-                                                <a href="{{ route('freelancer.profile.edit') }}"
-                                                    style="color: black">{{ Auth::user()->name }}</a><span>Freelancer</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- User Status Switcher -->
-                                        <div class="status-switch" id="snackbar-user-status">
-                                            <label class="user-online current-status">Online</label>
-                                            <label class="user-invisible">Invisible</label>
-                                            <!-- Status Indicator -->
-                                            <span class="status-indicator" aria-hidden="true"></span>
-                                        </div>
-                                    </div>
-
-                                    <ul class="user-menu-small-nav">
-                                        <li><a href="{{ route('home') }}"><i
-                                                    class="icon-material-outline-dashboard"></i>
-                                                Dashboard</a></li>
-                                        <li><a href="dashboard-settings.html"><i
-                                                    class="icon-material-outline-settings"></i> Settings</a></li>
-                                        <li><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault(); document.getElementById('logout').submit();"><i
-                                                    class="icon-material-outline-power-settings-new"></i> Logout</a>
-                                        </li>
-                                    </ul>
-                                    <form action="{{ route('logout') }}" method="post" style="display: none;"
-                                        id="logout">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- User Menu / End -->
-
-                        <!-- Mobile Navigation Button -->
-                        <span class="mmenu-trigger">
-                            <button class="hamburger hamburger--collapse" type="button">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>
-                        </span>
-
-                    </div>
-                    <!-- Right Side Content / End -->
-
-                </div>
-            </div>
-            <!-- Header / End -->
-
-        </header>
         <div class="clearfix"></div>
         <!-- Header Container / End -->
 
@@ -269,42 +53,39 @@
                             <div class="dashboard-nav-inner">
 
                                 <ul data-submenu-title="Start">
-                                    <li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i>
+                                    <li><a href="#"><i class="icon-material-outline-dashboard"></i>
                                             Dashboard</a></li>
-                                    <li><a href="dashboard-messages.html"><i
+                                    <li><a href="{{ route('messages') }}"><i
                                                 class="icon-material-outline-question-answer"></i> Messages <span
                                                 class="nav-tag">2</span></a></li>
-                                    <li><a href="dashboard-bookmarks.html"><i
-                                                class="icon-material-outline-star-border"></i> Bookmarks</a></li>
-                                    <li><a href="dashboard-reviews.html"><i
-                                                class="icon-material-outline-rate-review"></i> Reviews</a></li>
+                                    <li><a href="#"><i class="icon-material-outline-star-border"></i>
+                                            Bookmarks</a></li>
+                                    <li><a href="#"><i class="icon-material-outline-rate-review"></i> Reviews</a>
+                                    </li>
                                 </ul>
 
                                 <ul data-submenu-title="Organize and Manage">
                                     <li><a href="#"><i class="icon-material-outline-business-center"></i>
                                             Jobs</a>
                                         <ul>
-                                            <li><a href="dashboard-manage-jobs.html">Manage Jobs <span
-                                                        class="nav-tag">3</span></a></li>
-                                            <li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
-                                            <li><a href="dashboard-post-a-job.html">Post a Job</a></li>
+                                            <li><a href="#">Manage Jobs <span class="nav-tag">3</span></a></li>
+                                            <li><a href="#">Manage Candidates</a></li>
+                                            <li><a href="{{ route('client.projects.create') }}">Post a Job</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#"><i class="icon-material-outline-assignment"></i> Tasks</a>
                                         <ul>
-                                            <li><a href="dashboard-manage-tasks.html">Manage Tasks <span
-                                                        class="nav-tag">2</span></a></li>
-                                            <li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
-                                            <li><a href="dashboard-my-active-bids.html">My Active Bids <span
-                                                        class="nav-tag">4</span></a></li>
-                                            <li><a href="dashboard-post-a-task.html">Post a Task</a></li>
+                                            <li><a href="#">Manage Tasks <span class="nav-tag">2</span></a></li>
+                                            <li><a href="#">Manage Bidders</a></li>
+                                            <li><a href="#">My Active Bids <span class="nav-tag">4</span></a></li>
+                                            <li><a href="#">Post a Task</a></li>
                                         </ul>
                                     </li>
                                 </ul>
 
                                 <ul data-submenu-title="Account">
-                                    <li class="active"><a href="dashboard-settings.html"><i
-                                                class="icon-material-outline-settings"></i> Settings</a></li>
+                                    <li class="active"><a href="{{ route('freelancer.profile.edit') }}"><i class="icon-material-outline-settings"></i>
+                                            Settings</a></li>
                                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault(); document.getElementById('logout').submit();"><i
                                                 class="icon-material-outline-power-settings-new"></i> Logout</a>
@@ -336,7 +117,7 @@
                         <!-- Breadcrumbs -->
                         <nav id="breadcrumbs" class="dark">
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="{{ route('home') }}">Home</a></li>
                                 <li><a href="#">Dashboard</a></li>
                                 <li>Settings</li>
                             </ul>

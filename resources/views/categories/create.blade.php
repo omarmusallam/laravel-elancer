@@ -13,7 +13,7 @@
         </div>
     @endif
 
-    <form action="{{ route('categories.store') }}" method="post">
+    <form action="{{ route('dashboard.categories.store') }}" method="post">
         @csrf
         @include('categories/_form')
     </form>

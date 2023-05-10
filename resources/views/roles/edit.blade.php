@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form action="{{ route('roles.update', $role->id) }}" method="post">
+    <form action="{{ route('dashboard.roles.update', $role->id) }}" method="post">
         @csrf
         @method('put')
 

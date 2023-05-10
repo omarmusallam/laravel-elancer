@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('title')
-    Categories <small><a class="btn  btn-sm btn-outline-primary" href="{{ route('categories.create') }}">Create</a></small>
+    Categories <small><a class="btn  btn-sm btn-outline-primary" href="{{ route('dashboard.categories.create') }}">Create</a></small>
 @endsection
 
 @section('content')
@@ -26,15 +26,15 @@
                         {{-- $category->id :(فقط one prameter - route عندما يستقبل ال ) --}}
                         <td>{{ $category->id }}</td>
                         <td><a
-                                href="{{ route('categories.show', ['category' => $category->id]) }} ">{{ $category->name }}</a>
+                                href="{{ route('dashboard.categories.show', ['category' => $category->id]) }} ">{{ $category->name }}</a>
                         </td>
                         <td>{{ $category->slug }} </td>
                         <td>{{ $category->parent_name ?? 'No Parent' }} </td>
                         <td>{{ $category->created_at }} </td>
-                        <td><a href="{{ route('categories.edit', [$category->id]) }}" class="btn btn-sm btn-dark">Edit</a>
+                        <td><a href="{{ route('dashboard.categories.edit', [$category->id]) }}" class="btn btn-sm btn-dark">Edit</a>
                         </td>
                         <td>
-                            <form action="{{ route('categories.destroy', $category->id) }} " method="post">
+                            <form action="{{ route('dashboard.categories.destroy', $category->id) }} " method="post">
                                 @csrf
                                 @method('delete')
                                 {{-- <input type="hidden" name="_method" value="delete"> --}}

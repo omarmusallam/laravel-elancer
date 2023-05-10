@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group([
-    'prefix' => '/dashboard',
+    'prefix' => 'admin/dashboard',
     'middleware' => ['auth:admin'],
+    'as' => 'dashboard.',
 ], function () {
 
     Route::resource('roles', RolesController::class);
@@ -25,8 +26,6 @@ Route::group([
         ->group(function () {
             Route::get('/', [CategoriesController::class, 'index'])
                 ->name('index');
-            Route::get('/trash', [CategoriesController::class, 'trash'])
-                ->name('trash');
             Route::get('/create', [CategoriesController::class, 'create'])
                 ->name('create');
             Route::get('/{category}', [CategoriesController::class, 'show'])
@@ -40,6 +39,8 @@ Route::group([
             Route::delete('/{category}', [CategoriesController::class, 'destroy'])
                 ->name('destroy');
 
+            Route::get('/trash', [CategoriesController::class, 'trash'])
+                ->name('trash');
             Route::put('/trash/{category}/restore', [CategoriesController::class, 'restore'])
                 ->name('restore');
             Route::delete('/trash/{category}', [CategoriesController::class, 'forceDelete'])

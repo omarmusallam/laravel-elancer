@@ -47,7 +47,7 @@ class RolesController extends Controller
 
         $role = Role::create($request->all());
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role :name created!', [
                 'name' => $role->name,
             ]));
@@ -93,7 +93,7 @@ class RolesController extends Controller
 
         $role->update($request->all());
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role :name updated!', [
                 'name' => $role->name,
             ]));
@@ -109,7 +109,7 @@ class RolesController extends Controller
     {
         $role->delete();
 
-        return redirect()->route('roles.index')
+        return redirect()->route('dashboard.roles.index')
             ->with('success', __('Role :name deleted!', [
                 'name' => $role->name,
             ]));

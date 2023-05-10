@@ -85,7 +85,7 @@ class CategoriesController extends Controller
         }
         $category = Category::create($data);
 
-        return redirect(route('categories.index'))
+        return redirect(route('dashboard.categories.index'))
             ->with('success', 'Category Created');
     }
 
@@ -111,7 +111,7 @@ class CategoriesController extends Controller
 
         $category->update($request->all());
         return redirect()
-            ->route('categories.index')
+            ->route('dashboard.categories.index')
             ->with('success', 'Category Updated');
     }
 
@@ -125,7 +125,7 @@ class CategoriesController extends Controller
         Category::destroy($id);
 
         session()->flash('success', 'Category Deleted');
-        return redirect()->route('categories.index');
+        return redirect()->route('dashboard.categories.index');
         //->with('success', 'Category Deleted');
     }
 
@@ -143,7 +143,7 @@ class CategoriesController extends Controller
         $category->restore();
 
         return redirect()
-            ->route('categories.trash')
+            ->route('dashboard.categories.trash')
             ->with('success', 'Category restored!');
 
     }
@@ -154,7 +154,7 @@ class CategoriesController extends Controller
         $category->forceDelete();
 
         return redirect()
-            ->route('categories.trash')
+            ->route('dashboard.categories.trash')
             ->with('success', 'Category deleted for ever!');
     }
 

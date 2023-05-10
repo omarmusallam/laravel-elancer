@@ -3,7 +3,7 @@
 @section('title', 'Edit Category')
 
 @section('content')
-    <form action="{{ route('categories.update', $category->id) }}" method="post">
+    <form action="{{ route('dashboard.categories.update', $category->id) }}" method="post">
         @csrf
         @method('put')
 

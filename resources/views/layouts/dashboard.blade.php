@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
+                    <a href="{{ route('dashboard.dashboard') }}" class="nav-link">Home</a>
                 </li>
             </ul>
 
@@ -173,11 +173,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{ route('categories.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                            <a href="{{ route('dashboard.dashboard') }}"
+                                class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Categories
-                                    <span class="right badge badge-danger">New</span>
+                                    Dashboard
                                 </p>
                             </a>
                         </li>
@@ -187,10 +187,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{ route('roles.index') }}" class="nav-link">
+                            <a href="{{ route('dashboard.categories.index') }}"
+                                class="nav-link {{ request()->is('admin/dashboard/categories*') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
+                                    Categories
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.roles.index') }}"
+                                class="nav-link {{ request()->is('admin/dashboard/roles*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
                                     Roles
+                                    <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>
                         </li>
@@ -212,7 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('dashboard.dashboard') }}">Home</a></li>
                                 @yield('breadcrumb')
                                 {{-- <li class="breadcrumb-item active">Starter Page</li> --}}
                             </ol>
@@ -250,7 +266,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="#">{{ config('app.name') }}</a>.</strong>
+            <strong>Copyright &copy; 2014-2021 <a href="{{ route('home') }}">{{ config('app.name') }}</a>.</strong>
             All
             rights reserved.
         </footer>
